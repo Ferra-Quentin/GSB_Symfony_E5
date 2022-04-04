@@ -22,6 +22,18 @@ class DomaineCategorieFixtures extends Fixture{
         
         $uneCategorie2 = new Categorie();
         $uneCategorie2->setLibelleCategorie("comptable");
+        
+        $uneCategorie3 = new Categorie();
+        $uneCategorie3->setLibelleCategorie("Directeur branche developpement");
+        
+        $uneCategorie4 = new Categorie();
+        $uneCategorie4->setLibelleCategorie("Directeur editorial");
+        
+        $uneCategorie5 = new Categorie();
+        $uneCategorie5->setLibelleCategorie("Moderateur");
+        
+        $uneCategorie6 = new Categorie();
+        $uneCategorie6->setLibelleCategorie("Support");
       
         $domaine1 = new Domaine();
         $domaine1->setNomDomaine("Administratif");
@@ -29,17 +41,37 @@ class DomaineCategorieFixtures extends Fixture{
         $domaine2 = new Domaine();
         $domaine2->setNomDomaine("Exterieur");
         
+        $domaine3 = new Domaine();
+        $domaine3->setNomDomaine("Editeur");
+        
+        $domaine4 = new Domaine();
+        $domaine4->setNomDomaine("Directeur");
+        
         
         $uneCategorie2->addLesDomaine($domaine1);
+        $uneCategorie2->addLesDomaine($domaine3);
+        
         $domaine1->addLesCategory($uneCategorie2);
+        $domaine1->addLesCategory($uneCategorie5);
+        $domaine1->addLesCategory($uneCategorie6);
+        
+        
+        $domaine4->addLesCategory($uneCategorie3);
+        $domaine4->addLesCategory($uneCategorie4);
         
         $uneCategorie1->addLesDomaine($domaine2);
         $domaine2->addLesCategory($uneCategorie1);
         
         $manager->persist($uneCategorie1);
         $manager->persist($uneCategorie2);
+        $manager->persist($uneCategorie3);
+        $manager->persist($uneCategorie4);
+        $manager->persist($uneCategorie5);
+        $manager->persist($uneCategorie6);
         $manager->persist($domaine1);
         $manager->persist($domaine2);
+        $manager->persist($domaine3);
+        $manager->persist($domaine4);
         
         
         $manager->flush();
