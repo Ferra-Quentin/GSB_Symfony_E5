@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class FraisforfaitCrudController extends AbstractController
 {
     /**
-     * @Route("/", name="fraisforfait_crud_index", methods={"GET"})
+     * @Route("/lesFraisForfait", name="fraisforfait_crud_index", methods={"GET"})
      */
     public function index(FraisforfaitRepository $fraisforfaitRepository): Response
     {
@@ -26,7 +26,7 @@ class FraisforfaitCrudController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="fraisforfait_crud_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="fraisforfait_crud_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
