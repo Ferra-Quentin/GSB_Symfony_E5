@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}<h1 class="h1-large">Création d'une fiche frais</h1>
+    <a class="btn-solid-lg" href="#introduction">Créer la fiche frais</a>{% endblock %}
+
+{% block corps %}
+    <div id="introduction" class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Créer une fiche frais</h1>
+
+                    {{ include('fichefrais_crud/_form.html.twig') }}
+
+                    <a href="{{ path('fichefrais_crud_index') }}">Voir les fiches frais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

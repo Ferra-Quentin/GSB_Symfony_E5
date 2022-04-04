@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+<style>
+    br{
+        line-height: 20px;
+    }
+</style>
+    <table>
+        <tr>{{ form_row(form.idutilisateur) }}</tr><br/>
+        <tr>{{ form_row(form.id) }}</tr><br/>
+        <tr>{{ form_row(form.mois) }}</tr><br/>
+        <tr>{{ form_row(form.nbjustitificatifs) }}</tr><br/>
+        <tr>{{ form_row(form.montant) }}</tr><br/>
+        <tr>{{ form_row(form.modification) }}</tr><br/>
+        <tr>{{ form_row(form.idetat) }}</tr>
+        <br/>
+    </table>
+    <button style="background-color: #7dc22b;" class="btn">{{ button_label|default('Valider') }}</button>
+{{ form_end(form) }}
