@@ -83,4 +83,12 @@ class UtilisateurRepository extends ServiceEntityRepository
         return $query->getArrayResult();
     }
     
+    public function utilisateur() {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery("SELECT u.nom, u.prenom, u.adresse, u.cp, u.ville, u.dateembauche, c.libellecategorie FROM App\Entity\Utilisateur u 
+            INNER JOIN App\Entity\Categorie c
+            WITH c.id = u.la_categorie");
+        return $query->getArrayResult();
+    }
+    
 }

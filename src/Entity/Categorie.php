@@ -92,13 +92,13 @@ class Categorie
      */
     public function getLesDomaines(): Collection
     {
-        return $this->lesdomaines;
+        return $this->les_domaines;
     }
 
     public function addLesDomaine(Domaine $lesDomaine): self
     {
-        if (!$this->lesdomaines->contains($lesDomaine)) {
-            $this->lesdomaines[] = $lesDomaine;
+        if (!$this->les_domaines->contains($lesDomaine)) {
+            $this->les_domaines[] = $lesDomaine;
             $lesDomaine->addLesCategory($this);
         }
 

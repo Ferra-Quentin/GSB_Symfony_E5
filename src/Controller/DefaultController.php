@@ -44,7 +44,7 @@ class DefaultController extends AbstractController
     public function liste(): Response
         {
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Utilisateur::class);
-        $lesInscription = $repo->findAll();
+        $lesInscription = $repo->utilisateur();
         return $this->render('pages/tout_les_users.html.twig',['listeUtilisateurs' => $lesInscription]);
         }
         

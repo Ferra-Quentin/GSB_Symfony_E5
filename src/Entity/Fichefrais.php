@@ -38,7 +38,7 @@ class Fichefrais
     /**
      * @var string|null
      *
-     * @ORM\Column(name="montantValide", type="decimal", precision=10, scale=2, nullable=true)
+     * @ORM\Column(name="montantValide", type="decimal", precision=10, scale=2, nullable=false)
      */
     private $montantvalide;
 

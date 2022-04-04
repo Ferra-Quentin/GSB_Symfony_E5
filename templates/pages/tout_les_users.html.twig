@@ -23,6 +23,7 @@
             <td class="titre">Code Postal</td>
             <td class="titre">Ville</td>
             <td class="titre">Date d'embauche</td>
+            <td class="titre">Categorie</td>
         </tr>
         </thead>
         <tbody>
@@ -34,7 +35,7 @@
                     <td>{{ unUtilisateur.cp }}</td>
                     <td>{{ unUtilisateur.ville }}</td>
                     <td>{{ unUtilisateur.dateembauche|date('d/m/Y') }}</td>
-                    
+                    <td>{{ unUtilisateur.libellecategorie }}</td>                  
                 </tr>
             {% endfor %}:
         </tbody>

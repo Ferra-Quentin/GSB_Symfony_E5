@@ -32,12 +32,14 @@ class FicheFraisFixtures extends Fixture implements DependentFixtureInterface {
         $ficheFrais1->setIdutilisateur($this -> getReference (UtilisateurFixtures::UTILISATEUR_ID_REFERENCE ));
         $ficheFrais1->setMois("202011");
         $ficheFrais1->setNbjustificatifs(2);
+        $ficheFrais1->setMontantvalide(0);
         $ficheFrais1->setIdetat($this -> getReference (EtatFixtures::ETAT_ID_REFERENCE ));
         
         $ficheFrais2 = new Fichefrais();
         $ficheFrais2->setIdutilisateur($this -> getReference (UtilisateurFixtures::UTILISATEUR_ID_REFERENCE ));
         $ficheFrais2->setMois("202010");
         $ficheFrais2->setNbjustificatifs(2);
+        $ficheFrais2->setMontantvalide("1000");
         $ficheFrais2->setIdetat($this -> getReference (EtatFixtures::ETAT_ID_REFERENCE ));
 
         $manager->persist($ficheFrais1);
