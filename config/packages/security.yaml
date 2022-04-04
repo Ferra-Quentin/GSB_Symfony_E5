@@ -1,0 +1,41 @@
+security:
+    # https://symfony.com/doc/current/security/experimental_authenticators.html
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#c-hashing-passwords
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    role_hierarchy:
+        ROLE_USER1: [ ROLE_USER ]
+        ROLE_USER2: [ ROLE_USER ]
+        ROLE_ADMINISTRATEUR: [ ROLE_SUPER_ADMIN ]
+        
+    providers:
+        users_in_memory: { memory: null }
+            #memory:
+                #users:
+                    #user1: { password: '$2y$13$k/BOeETjL.Y7hypG.XPLeO77eXzZSdL2voguzrcDtySNgGH424QUu', roles: ['ROLE_USER1'] }
+                    #user2: { password: '$2y$13$XG/UKeg5n266K9a4Fg/Leu7CxacQQsxf1D04nkZ4/3z6RJhbsvATu', roles: ['ROLE_USER2'] }
+                    #user3: { password: '$2y$13$PzxELdmsM4EdCNlwtSlfSOWzbP5XaTMH9c.C5vy7BzV7kKOj2dvn6', roles: ['ROLE_ADMINISTRATEUR'] }
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            lazy: true
+            provider: users_in_memory
+            #http_basic: 
+                #realm: Connexion chacal !
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        #- { path: ^/*, roles: ROLE_ADMIN }
+        #- { path: ^/, roles: [ROLE_USER1, ROLE_ADMINISTRATEUR] }
+        # - { path: ^/profile, roles: ROLE_USER }

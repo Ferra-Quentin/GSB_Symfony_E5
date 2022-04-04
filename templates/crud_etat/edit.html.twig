@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}<h1 class="h1-large">Modifier un état</h1>
+    <a class="btn-solid-lg" href="#introduction">Modifier l'état</a>{% endblock %}
+
+{% block corps %}
+    <div id="introduction" class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Modifier un Etat</h1>
+                    {{ form_start(form) }}
+                        <style>
+                            br{
+                                line-height: 20px;
+                            }
+                        </style>
+                        <table>
+                            <tr>{{ form_row(form.id) }}</tr><br/>
+                            <tr>{{ form_row(form.libelle) }}</tr>
+                            <br/>
+                        </table>
+                        <button style="background-color: #7dc22b;" class="btn">{{ button_label|default('Valider') }}</button>
+                        <button style='background-color: #7dc22b; border-color: #7dc22b' class="btn"><a href="{{ path('crud_etat_index') }}">Voir la liste des états</a></button><br>
+                    {{ form_end(form) }}
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

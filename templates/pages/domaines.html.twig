@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+
+{% block titre %}
+    <h1 class="h1-large">Nos domaines</h1>
+    <a class="btn-solid-lg" href="#table">Decouvrez nos domaines</a>
+{% endblock %}
+
+
+{%block corps %}
+    
+    <style>
+        .titre{
+            font-weight: bold;
+        }
+        td{
+            padding: 5em;
+        }
+    </style>
+    {%  if listeCatDom is empty %}
+        <h3 style="text-align: center; margin-top: 1em;">Aucun domaine et aucune categorie</h1>
+    {% else %}}
+        <h1 style="text-align: center; margin-top: 1em;">Nos Domaine et nos Categorie</h1>
+    <table class="table" id="table">
+        <thead>
+        <tr>
+            <td class="titre">Domaine</td>
+            <td class="titre">Categorie 1</td>
+            <td class="titre">Categorie 2 (S'il en possède une 2ème)</td>
+            <td class="titre">Categorie 3 (S'il en possède une 3ème)</td>
+            <td class="titre">Categorie 4 (S'il en possède une 4ème)</td>
+        </tr>
+        </thead>
+        <tbody>
+            {% for unDomaine in listeCatDom %}
+                <tr>
+                    <td><strong>{{ unDomaine.nomdomaine }}</strong></td>
+                    
+                    {% for uneCategorie in unDomaine.lescategories%}
+                        <td style = "text-align: center;"><em>{{ uneCategorie.libellecategorie }}</em></td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}}
+{% endblock %}
+

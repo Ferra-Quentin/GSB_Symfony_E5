@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+<style>
+    br{
+        line-height: 20px;
+    }
+</style>
+<table>
+    <tr>{{ form_row(form.id) }}</tr><br/>
+    <tr>{{ form_row(form.libelle) }}</tr><br/>
+    <tr>{{ form_row(form.montant) }}</tr>
+</table>
+    <br/>
+    <button style="background-color: #7dc22b;" class="btn">{{ button_label|default('Valider') }}</button>
+{{ form_end(form) }}

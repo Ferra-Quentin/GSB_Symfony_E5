@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}<h1 class="h1-large">Nos Frais Forfaist</h1>
+    <a class="btn-solid-lg" href="#table">Voir nos frais forfaits</a>{% endblock %}
+
+{% block corps%}
+    <div id="introduction" class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Liste de nos frais forfait</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Libelle</th>
+                                <th>Montant</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for fraisforfait in fraisforfaits %}
+                            <tr>
+                                <td>{{ fraisforfait.id }}</td>
+                                <td>{{ fraisforfait.libelle }}</td>
+                                <td>{{ fraisforfait.montant }}</td>
+                                <td>
+                                    <a href="{{ path('fraisforfait_crud_show', {'id': fraisforfait.id}) }}">Voir</a>
+                                    <a href="{{ path('fraisforfait_crud_edit', {'id': fraisforfait.id}) }}">Modifier</a>
+                                    {{ include('fraisforfait_crud/_delete_form.html.twig') }}
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="4">Aucun Résultat</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                        <a href="{{ path('fraisforfait_crud_new') }}">Créer une nouveau frais forfait</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+{% endblock %}

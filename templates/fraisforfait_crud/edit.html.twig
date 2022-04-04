@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}<h1 class="h1-large">Modifier un Frais Forfait</h1>
+    <a class="btn-solid-lg" href="#table">Modifier le frais forfait</a>{% endblock %}
+
+{% block corps %}
+    <div id="introduction" class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Modifier le frais forfait</h1>
+
+                    {{ include('fraisforfait_crud/_form.html.twig', {'button_label': 'Update'}) }}
+
+                    <a href="{{ path('fraisforfait_crud_index') }}">back to list</a>
+
+                    {{ include('fraisforfait_crud/_delete_form.html.twig') }}
+{% endblock %}

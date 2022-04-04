@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}
+    <h1 class="h1-large">Nos états</h1>
+    <a class="btn-solid-lg" href="#table">Voir nos états</a>
+{% endblock %}
+
+{% block corps %}
+    
+    <div id="introduction" class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Liste de nos états</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Libelle</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for etat in etats %}
+                            <tr>
+                                <td>{{ etat.id }}</td>
+                                <td>{{ etat.libelle }}</td>
+                                <td>
+                                    <a href="{{ path('crud_etat_show', {'id': etat.id}) }}">Voir</a>
+                                    <a href="{{ path('crud_etat_edit', {'id': etat.id}) }}">Modifier</a>
+                                    {{ include('crud_etat/_delete_form.html.twig') }}
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="3">Aucun résultat</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <a href="{{ path('crud_etat_new') }}">Créer un état</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+{% endblock %}

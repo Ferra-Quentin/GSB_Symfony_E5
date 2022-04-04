@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block titre %}
+    <h1 class="h1-large">Nos réseau informatique</h1>
+    <a class="btn-solid-lg" href="#equipements">Decouvrez comment notre réseau informatique est géré</a>
+{% endblock %}
+{% block corps %}
+    <div class="ex-basic-1 pt-3 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <center><h1>Salle serveur et connexion internet<h1></center>
+                    <p style ="text-align:center;" class="mb-5">L'organisation des serveurs est la suivante. Il n’est pas précisé si les serveurs sont virtualisés ou non. Seuls les serveurs principaux sont présentés, les redondances n'apparaissent pas. </p>
+                    <center>
+                        <img class="img-fluid mb-5" src="{{asset('./images/organisation.png')}}" alt="img">
+                    </center>
+                    <a class="btn-solid-reg mb-5" href="{{ path('default') }}">Accueil</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

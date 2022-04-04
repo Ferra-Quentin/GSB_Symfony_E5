@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{%block corps %}
+    
+    <style>
+        .titre{
+            font-weight: bold;
+        }
+        td{
+            padding: 5em;
+        }
+    </style>
+    {%  if listeUtilisateurs is empty %}
+        <h3 style="text-align: center; margin-top: 1em;">Tout les utilisateurs ont des frais</h1>
+    {% else %}}
+        <h1 style="text-align: center; margin-top: 1em;">Nos Utilisateurs n'ayant pas de frais</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <td class="titre">Nom</td>
+            <td class="titre">Prenom</td>
+        </tr>
+        </thead>
+        <tbody>
+            {% for unUtilisateur in listeUtilisateurs %}
+                <tr>
+                    <td>{{ unUtilisateur.nom }}</td>
+                    <td>{{ unUtilisateur.prenom }}</td>
+                    
+                </tr>
+            {% endfor %}:
+        </tbody>
+    </table>
+    {% endif %}}
+{% endblock %}
+
+{# empty Twig template #}
